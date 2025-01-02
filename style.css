@@ -9,7 +9,10 @@
   --light-bg-color: #f2f3f5;
   --light-text-color: #7c899a;
   --border-color: rgb(232, 232, 232, 0.2);
-  --dark-color: #0a021c;
+  --dark-color: #021429;
+  --light-logo-color: #f58634;
+  --orange-color: #fa9b78;
+  --blue-logo-color: #05408f;
 
   --font-small: 14px;
   --font-smaller: 11px;
@@ -216,11 +219,11 @@ svg {
 }
 
 .navbar_section .navigation .logo .icon_text .title:first-child {
-  color: #05408f;
+  color: var(--blue-logo-color);
 }
 
 .navbar_section .navigation .logo .icon_text .title:last-child {
-  color: #f58634;
+  color: var(--light-logo-color);
 }
 
 .navbar_section .navigation .nav_list {
@@ -270,11 +273,11 @@ svg {
   background: var(--primary-color);
   text-align: left;
   border-radius: 0 0 4px 4px;
-  max-height: 0; /* Start with height collapsed */
-  overflow: hidden; /* Hide content outside bounds */
-  transition: max-height 0.3s ease-in-out; /* Smooth transition */
-  opacity: 0; /* Start hidden */
-  pointer-events: none; /* Prevent interaction when not visible */
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+  opacity: 0; 
+  pointer-events: none;
 }
 
 .list_navbar_section
@@ -292,6 +295,7 @@ svg {
   padding: 0.75em 2em;
   transition: all 0.4s ease-out;
 }
+
 .list_navbar_section
   .container
   .navigation
@@ -299,7 +303,7 @@ svg {
   .nav_list
   .sub_nav_list
   li:hover {
-  background: var(--secondary-color);
+  color: var(--orange-color);
 }
 
 .list_navbar_section
@@ -523,7 +527,8 @@ svg {
   font-size: var(--font-small);
   font-weight: var(--fw7);
   z-index: 2;
-  color: var(--primary-color);
+  /* color: var(--primary-color); */
+  color: var(--dark-color);
 }
 .offer_section .container .wrapper .offer_list .offer_text .offer_title {
   font-size: 26px;
@@ -1008,6 +1013,9 @@ input {
     padding: 0.75em 1.5em;
     padding-left: 3.5em;
   }
+   .list_navbar_section .container .navigation .nav .nav_list .sub_nav_list {
+    background: transparent;
+  }
 }
 
 /* same same but different */
@@ -1095,7 +1103,7 @@ input {
   .nav_list
   .sub_nav_list
   li:hover {
-    background-color: var(--primary-color);
+    color: var(--orange-color);
 }
 }
 
