@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
-  --primary-color: #18181b;
-  --secondary-color: #27272a;
+  --primary-color:  linear-gradient(135deg, #021429, #8a4e23);
+  --secondary-color:linear-gradient(-135deg, #021429, #8a4e23);;
   --secondary-dark-color: #453c5c;
 
   --white-color: #fff;
@@ -46,7 +46,7 @@ body {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.4;
-  background-color: var(--primary-color);
+  background: var(--primary-color);
   color: var(--white-color);
   height: 100%;
   width: 100%;
@@ -161,7 +161,7 @@ svg {
   display: flex;
   align-items: center;
   padding: 0.1em;
-  background-color: transparent;
+  background: transparent;
   transition: 0.5s ease-out;
   font-size: var(--font-small);
 }
@@ -179,13 +179,13 @@ svg {
 .navbar_section .navigation .nav_list .nav_item a span {
   padding: 0.35em 1em;
   border-radius: 3px;
-  background-color: transparent;
+  background: transparent;
   transition: 0.5s ease-out;
   font-size: var(--font-small);
 }
 
 .navbar_section .navigation .nav_list .nav_item a:hover {
-  background-color: rgba(232, 232, 232, 1);
+  background: rgba(232, 232, 232, 1);
 }
 
 .navbar_section .navigation h1.title {
@@ -230,7 +230,7 @@ svg {
 }
 
 .list_navbar_section {
-  background-color: var(--primary-color);
+  background: var(--primary-color);
   /* background: linear-gradient(to bottom, #18181b 5%, #27272a 30%); */
 }
 
@@ -267,7 +267,7 @@ svg {
   top: calc(3.5em - 1px);
   left: 0;
   width: 250px;
-  background-color: var(--primary-color);
+  background: var(--primary-color);
   text-align: left;
   border-radius: 0 0 4px 4px;
   max-height: 0; /* Start with height collapsed */
@@ -299,7 +299,7 @@ svg {
   .nav_list
   .sub_nav_list
   li:hover {
-  background-color: var(--secondary-color);
+  background: var(--secondary-color);
 }
 
 .list_navbar_section
@@ -558,7 +558,7 @@ svg {
   left: -10%;
   width: 70%;
   height: 60%;
-  background-color: var(--white-color);
+  background: var(--white-color);
   z-index: 1;
   filter: blur(50px);
   opacity: 0.8;
@@ -582,7 +582,7 @@ svg {
   .offer_list
   .offer_item
   .time_duration {
-  background-color: var(--secondary-color);
+  background: var(--secondary-color);
   position: absolute;
   top: 1em;
   right: 1em;
@@ -597,7 +597,7 @@ svg {
 
 .testimonials_section {
   margin-top: 4em;
-  background-color: var(--secondary-color);
+  background: var(--secondary-color);
 }
 
 .testimonials_section .container .wrapper {
@@ -653,7 +653,7 @@ svg {
 
 /* footer */
 .footer_section {
-  background-color: var(--primary-color);
+  background: var(--primary-color);
   padding: 3em 1em;
 }
 
@@ -800,17 +800,17 @@ svg {
   text-transform: capitalize;
   font-weight: var(--fw5);
   color: var(--white-color);
-  background-color: green;
+  background: green;
   transition: all 0.3s ease-out;
 }
 
 .main .wrapper .topic .content form .button:hover {
   border: 1px solid green;
-  background-color: rgba(233, 232, 232, 0.1);
+  background: rgba(233, 232, 232, 0.1);
 }
 
 .main .wrapper .topic .content form .button:active {
-  background-color: rgba(202, 22, 200, 0.2);
+  background: rgba(202, 22, 200, 0.2);
 }
 
 .main .wrapper .topic .content .select_algo:focus {
@@ -882,7 +882,7 @@ svg {
   height: 100%;
   width: 100%;
   color: var(--white-color);
-  background-color: rgba(100, 100, 100, 0.15);
+  background: rgba(100, 100, 100, 0.15);
   text-align: center;
   border: 1px solid rgba(232, 232, 232, 0.2);
   border-radius: 11px;
@@ -895,7 +895,7 @@ svg {
 .main .input_visualizer .lower-section {
   border-radius: 12px;
   overflow: hidden;
-  background-color: #d3d3d3;
+  background: #d3d3d3;
 }
 
 #drawing-area {
