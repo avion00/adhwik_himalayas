@@ -160,10 +160,14 @@ svg {
 .navbar_section .navigation .top_nav_list .nav_item a span {
   display: flex;
   align-items: center;
-  padding: 0.5em;
+  padding: 0.1em;
   background-color: transparent;
   transition: 0.5s ease-out;
   font-size: var(--font-small);
+}
+
+.navbar_section .navigation .top_nav_list .nav_item a span:first-child {
+  margin-right: 1em;
 }
 
 .navbar_section .navigation .nav_list .nav_item a {
@@ -181,7 +185,7 @@ svg {
 }
 
 .navbar_section .navigation .nav_list .nav_item a:hover {
-  background-color: rgba(232, 232, 232, 0.3);
+  background-color: rgba(232, 232, 232, 1);
 }
 
 .navbar_section .navigation h1.title {
@@ -227,16 +231,14 @@ svg {
 
 .list_navbar_section {
   background-color: var(--primary-color);
-    /* background: linear-gradient(to bottom, #18181b 5%, #27272a 30%); */
-
+  /* background: linear-gradient(to bottom, #18181b 5%, #27272a 30%); */
 }
 
 .list_navbar_section .container .navigation .nav .nav_list {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-    border-top: 1px solid var(--border-color);
-
+  border-top: 1px solid var(--border-color);
 }
 
 .list_navbar_section .container .navigation .nav .nav_list .nav_item {
@@ -263,12 +265,27 @@ svg {
   position: absolute;
   z-index: 3;
   top: calc(3.5em - 1px);
-  width: 250px;
   left: 0;
+  width: 250px;
   background-color: var(--primary-color);
   text-align: left;
   border-radius: 0 0 4px 4px;
-  display: none;
+  max-height: 0; /* Start with height collapsed */
+  overflow: hidden; /* Hide content outside bounds */
+  transition: max-height 0.3s ease-in-out; /* Smooth transition */
+  opacity: 0; /* Start hidden */
+  pointer-events: none; /* Prevent interaction when not visible */
+}
+
+.list_navbar_section
+  .container
+  .navigation
+  .nav
+  .nav_list
+  .sub_nav_list.active {
+  max-height: 500px;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .list_navbar_section .container .navigation .nav .nav_list .sub_nav_list li {
@@ -299,6 +316,9 @@ svg {
 .navbar_section .navigation .menu {
   margin-right: 0.5em;
   display: none;
+  align-items: center;
+  justify-content: center;
+  width: 65px;
 }
 
 .navbar_section .navigation .menu .icon {
@@ -350,11 +370,14 @@ svg {
 
 .parallex .container .wrapper .top_title {
   font-size: 46px;
+  text-align: center;
+  font-size: clamp(2em, 5vw, 3em);
   font-weight: var(--fw7);
 }
 
 .parallex .container .wrapper .top_sub_title {
-  font-size: 16px;
+  font-size: clamp(0.75em, 2vw, 1em);
+
   text-align: center;
   line-height: 2;
   font-weight: var(--fw3);
@@ -387,7 +410,7 @@ svg {
   /* background-color: var(--border-color); */
   padding: 1em 2em;
   padding-left: 4em;
-  font-size: 16px;
+  font-size: clamp(13px, 1vw, 16px);
   backdrop-filter: blur(4px);
   border-radius: 50px;
   transition: 0.2s ease-out;
@@ -426,25 +449,24 @@ svg {
   opacity: 1;
 }
 
-.offer_section{
+.offer_section {
   padding: 0 1em;
 }
 
 .offer_section .container .specialOffer {
   padding-top: 4em;
-  
-  /* border: 1px solid red; */
 }
 
 .offer_section .container .specialOffer .offer_title {
-  font-size: 36px;
+  font-size: clamp(1.75em, 3vw, 2.75em);
   font-weight: var(--fw7);
 }
 
 .offer_section .container .specialOffer .offer_sub_title {
-  font-size: var(--font-small);
+  font-size: clamp(0.75em, 2vw, 1em);
+
   font-weight: var(--fw3);
-  line-height: 2;
+  line-height: 1.2;
 }
 
 .offer_section .container .wrapper .offer_list {
@@ -461,11 +483,18 @@ svg {
   border-radius: 4px;
   flex-grow: 1;
   height: 300px;
-  overflow: hidden; 
+  overflow: hidden;
   cursor: pointer;
 }
 
-:where(.offer_section.aceHoneymoonOffers_section, .offer_section.nepalTourPackages) .container .wrapper.aceHoneymoonOffers .offer_list .offer_item {
+:where(
+    .offer_section.aceHoneymoonOffers_section,
+    .offer_section.nepalTourPackages
+  )
+  .container
+  .wrapper.aceHoneymoonOffers
+  .offer_list
+  .offer_item {
   aspect-ratio: 1/1;
 }
 
@@ -473,7 +502,6 @@ svg {
   width: 100%;
   height: 100%;
   transition: all 0.3s ease-out;
-
 }
 
 .offer_section .container .wrapper .offer_list .offer_item .offer_image img {
@@ -497,28 +525,31 @@ svg {
   z-index: 2;
   color: var(--primary-color);
 }
-.offer_section .container .wrapper .offer_list .offer_text .offer_title{
+.offer_section .container .wrapper .offer_list .offer_text .offer_title {
   font-size: 26px;
-  color: var(--secondary-color); 
+  color: var(--secondary-color);
 }
 
-.offer_section .container .wrapper.aceHoneymoonOffers .offer_list .offer_text .offer_title{
+.offer_section
+  .container
+  .wrapper.aceHoneymoonOffers
+  .offer_list
+  .offer_text
+  .offer_title {
   font-size: 18px;
   padding: 1.5em 1.5em 0 0;
   line-height: 1.2;
 }
-.offer_section .offer_list .offer_text .offer_sub_title{
+.offer_section .offer_list .offer_text .offer_sub_title {
   display: flex;
   align-items: center;
   gap: 0.5em;
 }
 
-.offer_section .offer_list .offer_text .offer_sub_title span:first-child{
+.offer_section .offer_list .offer_text .offer_sub_title span:first-child {
   display: flex;
   align-items: center;
-
 }
-
 
 .offer_section .container .wrapper .offer_list .offer_item::before {
   content: "";
@@ -534,18 +565,28 @@ svg {
   rotate: 10deg;
 }
 
-.offer_section .container .wrapper.aceHoneymoonOffers .offer_list .offer_item::before {
+.offer_section
+  .container
+  .wrapper.aceHoneymoonOffers
+  .offer_list
+  .offer_item::before {
   width: 100%;
 }
 
-:where(.offer_section.aceHoneymoonOffers_section, .offer_section.nepalTourPackages) .container .wrapper.aceHoneymoonOffers .offer_list .offer_item .time_duration {
-  /* border: 1px solid red; */
+:where(
+    .offer_section.aceHoneymoonOffers_section,
+    .offer_section.nepalTourPackages
+  )
+  .container
+  .wrapper.aceHoneymoonOffers
+  .offer_list
+  .offer_item
+  .time_duration {
   background-color: var(--secondary-color);
-  /* z-index: 20000000000; */
   position: absolute;
   top: 1em;
   right: 1em;
-  padding: .75em;
+  padding: 0.75em;
   font-size: var(--font-smaller);
   font-weight: var(--fw5);
   display: flex;
@@ -562,58 +603,59 @@ svg {
 .testimonials_section .container .wrapper {
   display: flex;
   align-items: center;
-  justify-content: center; 
-  height: 100%; 
+  justify-content: center;
+  height: 100%;
 }
 
 .testimonials_section .container .wrapper .testimonials_list {
-  height: 380px;
+  min-height: 380px;
   width: 80%;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
 }
 
-.testimonials_section .container .wrapper .testimonials_list  .message{
-  font-size: 32px;
-  font-weight: var(--fw7);
-  line-height: 2;
-}
-
-.testimonials_section .container .wrapper .testimonials_list  .rating{
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 0.25em;
-margin-bottom: 1em;
-color: gold;
-}
-
-.testimonials_section .container .wrapper .testimonials_list  .description{
-  font-size: var(--font-small);
-  width: 75%;
+.testimonials_section .container .wrapper .testimonials_list .message {
+  padding-top: 2em;
+  padding-bottom: 1em;
   text-align: center;
-  font-weight: var(--fw5);
-  line-height: 1.5;
+  font-size: clamp(1.5em, 3vw, 2em);
+  font-weight: var(--fw7);
+  line-height: 1.2;
 }
 
+.testimonials_section .container .wrapper .testimonials_list .rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25em;
+  margin-bottom: 1.5em;
+  color: gold;
+}
 
-.testimonials_section .container .wrapper .testimonials_list  .guideTraveller{
+.testimonials_section .container .wrapper .testimonials_list .description {
+  font-size: var(--font-small);
+  font-size: clamp(12px, 1vw, 14px);
+  width: 85%;
+  opacity: 0.8;
+  text-align: center;
+  font-weight: var(--fw4);
+  line-height: 1.2;
+}
+
+.testimonials_section .container .wrapper .testimonials_list .guideTraveller {
   font-size: 21px;
   padding: 1em;
   font-weight: var(--fw7);
   line-height: 2;
 }
 
-
-
 /* footer */
 .footer_section {
   background-color: var(--primary-color);
-  padding: 5em 0;
+  padding: 3em 1em;
 }
-
 
 .footer_section .wrapper {
   display: flex;
@@ -622,16 +664,17 @@ color: gold;
   gap: 2em;
 }
 
+
+
 .footer_section .wrapper > div {
   flex: 1;
   min-width: 220px;
 }
 
 .footer_section h3 {
-  font-size: 1.5em;
+  font-size: clamp(1.75em, 2vw, 2em);
   margin-bottom: 1em;
 }
-
 
 .footer_section ul {
   list-style: none;
@@ -644,37 +687,36 @@ color: gold;
 
 .footer_section ul li a {
   text-decoration: none;
-  font-size: var(--font-small);
+  font-size: clamp(14px, 1vw, 16px);
   transition: color 0.3s ease;
 }
 
 .footer_section ul li a:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
 
-.footer_section .wrapper  .footer_contact ul li{
+.footer_section .wrapper .footer_contact ul li {
   /* border: 1px solid var(--border-color); */
   display: flex;
-  font-size: var(--font-small);
+  font-size: clamp(14px, 1vw, 16px);
   align-items: center;
   gap: 0.75em;
-  transition: all .3s ease-out;
+  transition: all 0.3s ease-out;
 }
 
-.footer_section .wrapper  .footer_contact ul li:hover{
-  opacity: .8;
+.footer_section .wrapper .footer_contact ul li:hover {
+  opacity: 0.8;
   cursor: pointer;
 }
 
-
-.footer_section .social_icons{
+.footer_section .social_icons {
   display: flex;
   gap: 1em;
 }
 .footer_section .social_icons a {
   color: #fff;
   margin-right: 0.5em;
-  font-size: 1.2em;
+  font-size: clamp(14px, 1vw, 16px);
   transition: all 0.3s ease;
 }
 
@@ -684,51 +726,30 @@ color: gold;
 
 /* Specific hover colors */
 .footer_section .social_icons a:nth-of-type(1):hover {
-  color: #1877F2; /* Facebook Blue */
+  color: #1877f2; /* Facebook Blue */
 }
 
 .footer_section .social_icons a:nth-of-type(2):hover {
-  color: #1DA1F2; /* Twitter Blue */
+  color: #1da1f2; /* Twitter Blue */
 }
 
 .footer_section .social_icons a:nth-of-type(3):hover {
-  color: #E4405F; /* Instagram Pink-Red */
+  color: #e4405f; /* Instagram Pink-Red */
 }
 
 .footer_section .social_icons a:nth-of-type(4):hover {
-  color: #0A66C2; /* LinkedIn Blue */
+  color: #0a66c2; /* LinkedIn Blue */
 }
 
 .footer_section .social_icons a:nth-of-type(5):hover {
-  color: #FF0000; /* YouTube Red */
+  color: #ff0000; /* YouTube Red */
 }
-
 
 .footer_section .footer_bottom {
   text-align: center;
   margin-top: 2em;
   font-size: 0.9em;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* body seciton */
 .main .wrapper {
@@ -939,7 +960,7 @@ input {
 
 @media screen and (max-width: 967px) {
   .navbar_section .navigation .menu {
-    display: block;
+    display: flex;
   }
 
   .navbar_section .navigation h1.title {
@@ -966,5 +987,156 @@ input {
   .output_result {
     position: relative;
     top: 0;
+  }
+
+  .sub_nav_list {
+    max-height: 0;
+  }
+
+  .nav_item.active .sub_nav_list {
+    max-height: 500px;
+  }
+
+  .right_email_nav_item {
+    display: none;
+  }
+  .parallex .search_box form {
+    width: 80%;
+  }
+
+  .parallex .search_box .search_input {
+    padding: 0.75em 1.5em;
+    padding-left: 3.5em;
+  }
+}
+
+/* same same but different */
+@media screen and (max-width: 967px) {
+  .list_navbar_section_for_mobile {
+    position: fixed;
+    top: 0;
+    padding-top: 4em;
+    right: 0;
+    height: 100%;
+    overflow: auto;
+    z-index: 1000;
+    width: 0;
+    transition: width 0.3s ease;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+  }
+  .list_navbar_section_for_mobile.active {
+    width: 100%;
+  }
+
+  .overlay.active {
+    display: block;
+  }
+
+  .list_navbar_section_for_mobile.active {
+    width: 300px;
+  }
+  .list_navbar_section .container .navigation .nav .nav_list {
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    border: none;
+    padding: 1em;
+    margin-top: 1em;
+  }
+
+  .list_navbar_section .container .navigation .nav .nav_list .nav_item {
+    border-bottom: 1px solid var(--border-color);
+    width: 100%;
+    text-align: left;
+  }
+
+  .list_navbar_section .container .navigation .nav .nav_list .sub_nav_list {
+    /* border: 1px solid red; */
+    position: relative;
+    top: 0;
+    border-radius: 0;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .list_navbar_section .container .navigation .nav .nav_list .sub_nav_list li {
+    padding: 0.75em 1em;
+    height: 100%;
+    opacity: 0.9;
+  }
+
+  .list_navbar_section
+    .container
+    .navigation
+    .nav
+    .nav_list
+    .sub_nav_list
+    li:first-child {
+    padding-top: 1em;
+  }
+
+  .list_navbar_section .container .navigation .nav .nav_list .sub_nav_list li {
+    display: flex;
+    align-items: center;
+  }
+  .list_navbar_section
+  .container
+  .navigation
+  .nav
+  .nav_list
+  .sub_nav_list
+  li:hover {
+    background-color: var(--primary-color);
+}
+}
+
+@media screen and (max-width: 567px) {
+  .navbar_section .navigation .top_nav_list .nav_item a span {
+    font-size: var(--font-smaller);
+  }
+  .navbar_section .navigation .menu {
+    width: 40px;
+  }
+  .parallex .search_box form {
+    width: 90%;
+  }
+  .parallex .search_box .search_input {
+    padding: 0.75em 1em;
+    padding-left: 3.25em;
+  }
+  .parallex .search_box form .icon {
+    left: 1em;
+  }
+  .offer_section .container .wrapper .offer_list {
+    flex-wrap: wrap;
+    padding: 0 1em;
+  }
+  .testimonials_section .container .wrapper .testimonials_list .description {
+    width: 95%;
+  }
+
+  .footer_section .logo{
+  width: 30%;
+  aspect-ratio: 3/2;
+  float: right;
+}
+
+.footer_section ul {
+  padding: 0 1em;
+}
+}
+
+@media screen and (min-width: 967px) {
+  .center_email_nav_item {
+    display: none;
   }
 }
