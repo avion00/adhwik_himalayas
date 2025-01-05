@@ -246,13 +246,32 @@ svg {
 
 .list_navbar_section .container .navigation .nav .nav_list .nav_item {
   position: relative;
-  padding: 1em;
+  padding: 0 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.45em;
   text-align: center;
   flex-grow: 1;
   font-size: var(--font-small);
   font-weight: var(--fw5);
   transform: all 0.3s ease-out;
 }
+
+
+.list_navbar_section .container .navigation .nav .nav_list .nav_item.multi::after{
+  content: '\25B8';
+  display: inline-block;
+  rotate: 90deg;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
 
 .list_navbar_section
   .container
@@ -266,7 +285,7 @@ svg {
 
 .list_navbar_section .container .navigation .nav .nav_list .sub_nav_list {
   position: absolute;
-  z-index: 3;
+  z-index: 10;
   top: calc(3.5em - 1px);
   left: 0;
   width: 250px;
@@ -454,32 +473,34 @@ svg {
 }
 
 .offer_section {
-  padding: 0 1em;
+  padding: 0 2em;
 }
+
 
 .offer_section .container .specialOffer {
   padding-top: 4em;
 }
 
 .offer_section .container .specialOffer .offer_title {
-  font-size: clamp(1.75em, 3vw, 2.75em);
+  font-size: clamp(1.75em, 3vw, 2.25em);
   font-weight: var(--fw7);
 }
 
 .offer_section .container .specialOffer .offer_sub_title {
-  font-size: clamp(0.75em, 2vw, 1em);
-
+  font-size: clamp(0.75em, 2vw, .9em);
   font-weight: var(--fw3);
   line-height: 1.2;
 }
 
 .offer_section .container .wrapper .offer_list {
-  /* border: 1px solid red; */
-
   display: flex;
   justify-content: space-between;
   gap: 1.5em;
   margin: 1.5em 0;
+}
+
+.offer_section .container .wrapper .offer_list.holidays{
+  flex-wrap: wrap;
 }
 
 .offer_section .container .wrapper .offer_list .offer_item {
@@ -487,9 +508,11 @@ svg {
   border-radius: 4px;
   flex-grow: 1;
   height: 300px;
+  min-width: 200px;
   overflow: hidden;
   cursor: pointer;
 }
+
 
 :where(
     .offer_section.aceHoneymoonOffers_section,
@@ -677,7 +700,8 @@ svg {
 }
 
 .footer_section h3 {
-  font-size: clamp(1.75em, 2vw, 2em);
+  font-size: clamp(1.125em, 3vw, 1.5em);
+  font-weight: var(--fw7);
   margin-bottom: 1em;
 }
 
@@ -756,212 +780,528 @@ svg {
   font-size: 0.9em;
 }
 
-/* body seciton */
-.main .wrapper {
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  grid-gap: 1em;
-  padding: 1em;
+
+
+/* ================================ */
+/*                                  */
+/*    page-single body seciton      */
+/*                                  */
+/* ================================ */
+
+.page_single_section{
+  padding: 0 2em;
+}
+
+.page_single_section .container .wrapper{
+  /* border: 1px solid red; */
+  display: flex;
+  gap: 20px;
+  align-items: start;
+  justify-content: space-between;
+  position: relative;
+  padding: 1em 0;
+}
+
+.page_single_section .container .wrapper .main_blog{
+  flex: 0.65;
+  /* border: 1px solid red; */
+  height: 100%;
+  width: 100%;
+}
+.page_single_section .container .wrapper .main_blog .gallery{
+  width: 100%;
+  aspect-ratio: 5/3;
+  height: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  
+}
+
+.page_single_section .container .wrapper .main_blog .gallery img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 5;
+}
+.page_single_section .container .wrapper .main_blog .gallery img::after{
+  content: "";
+  position: absolute;
+  z-index: 6;
+  background: rgba(223, 222, 222, 0.1);
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
 }
 
-.topic {
-  min-width: 300px;
-  height: fit-content;
-  position: sticky;
-  position: -webkit-sticky;
-  top: 82px;
-  padding: 1em;
+
+
+
+
+
+
+
+
+
+
+
+.page_single_section .container .wrapper .main_blog .explaination{
+  margin-top: 1em;
+  padding: 1.5em;
+  background: var(--primary-color);
+  border-radius: 4px;
 }
 
-.main .wrapper .topic .title {
-  font-size: clamp(1.75em, 1em + 2vw, 3em);
+.page_single_section .container .wrapper .main_blog .explaination .explaination_title{
+  font-size: clamp(1.5em, 3vw, 2em);
+  font-weight: var(--fw7);
+  margin-bottom: .5em;
+}
+
+.page_single_section .container .wrapper .main_blog .explaination .explaination_text{
+  font-size: var(--font-small);
+  font-weight: normal;
+  line-height: 1.4;
+  padding-bottom: 1em;
+}
+
+.page_single_section .container .wrapper .main_blog .explaination .explaination_Youtube_video {
+  width: 100%;
+  aspect-ratio: 16/9; 
+  overflow: hidden; 
+  position: relative;
+  border-radius: 4px;
+}
+
+.page_single_section .container .wrapper .main_blog .explaination .explaination_Youtube_video iframe {
+  width: 100%;
+  height: 100%;
+  border: none; 
+}
+
+
+.page_single_section .container .wrapper .main_blog :where(.itinerary, .offer_includes, .offer_excludes){
+  margin-top: 1.5em;
+  padding: 1.5em;
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+
+.page_single_section .container .wrapper .main_blog :where(.itinerary .itinerary_title, .offer_includes .offer_includes_title, .offer_excludes .offer_excludes_title){
+  font-size: clamp(1.5em, 3vw, 2em);
+  font-weight: var(--fw7);
+  padding-bottom: .25em;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.page_single_section .container .wrapper .main_blog :where(.offer_includes .offer_includes_title, .offer_excludes .offer_excludes_title){
+  margin-bottom: 0.5em;
+}
+
+
+.page_single_section .container .wrapper .main_blog .itinerary  :where(.itinerary .itinerary_container, .offerIncludes .offer_includes_container, .offer_excludes .offer_excludes_container){
+  max-width: 800px;
+}
+
+.page_single_section .container .wrapper .main_blog .itinerary .itinerary_container .faq-item {
+  border-bottom: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+ .page_single_section .container .wrapper .main_blog .itinerary .itinerary_container .faq-item:last-child {
+  border-bottom: none;
+}
+
+.page_single_section .container .wrapper .main_blog .itinerary .itinerary_container .question {
+  cursor: pointer;
+  padding: 0.75em 1em;
+  font-size: 1em;
+  font-weight: var(--fw5);
+  transition: background-color 0.3s ease;
+  border-radius: 8px 8px 0 0;
+}
+
+.page_single_section .container .wrapper .main_blog .itinerary .itinerary_container .question::before {
+  content: '\25B8';
+  display: inline-block;
+  transform: rotate(0deg); 
+  transition: transform 0.3s ease;
+  margin-right: 1em;
+  font-weight: bold;
+}
+
+.page_single_section .container .wrapper .main_blog .itinerary .itinerary_container .faq-item.open .question::before {
+  transform: rotate(90deg); 
+}
+
+
+.page_single_section .container .wrapper .main_blog .itinerary .itinerary_container .faq-item .answer {
+  max-height: 0;
+  overflow: hidden;
+  margin: 0 1.75em;
+  border-radius: 0 0 8px 8px;
+  padding: 0 1.75em;
+  font-size: var(--font-small);
+  transition: max-height 0.4s ease, padding 0.4s ease, margin 0.4s ease;
+  box-shadow: inset 0 -1px 4px rgba(0, 0, 0, 0.05);
+}
+
+
+.page_single_section .container .wrapper .main_blog .itinerary .itinerary_container .faq-item.open .answer {
+  margin: 0 1.75em 1em 1.75em;
+  max-height: 100vh; 
+}
+
+.page_single_section .container .wrapper .main_blog .itinerary .itinerary_container .faq-item.open .answer  p:not(:last-child){
+  padding-bottom: 1em;
+}
+
+.page_single_section .container .wrapper .main_blog .itinerary .itinerary_container .faq-item.open .answer  div:not(:last-child){
+  padding-bottom: 1em;
+}
+
+
+.page_single_section .container .wrapper .main_blog :where(.offer_includes .offer_includes_container .offer_includes_item, .offer_excludes .offer_excludes_container .offer_excludes_item){
+  font-size: var(--font-small);
+  padding: .5em 0;
+}
+
+
+
+
+
+
+
+
+/* this is now form request,  that is right side container */
+
+.page_single_section .container .wrapper .form_request{
+  flex: 0.35;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 5em;
+  left: 0;
+}
+
+.page_single_section .container .wrapper .form_request .box{
+  padding: 1.5em;
+  background: var(--primary-color);
   margin-bottom: 1.5em;
+  border-radius: 4px;
+}
+
+.page_single_section .container .wrapper .form_request .box:last-child{
+  margin-bottom: 0;
+}
+
+.page_single_section .container .wrapper .form_request .box .title{
+  font-size: clamp(1.25em, 3vw, 1.5em);
+  font-weight: var(--fw7);
+  padding-bottom: .25em;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: .75em;
+  color: var(--orange-color);
+}
+
+.page_single_section .container .wrapper .form_request .box  .text{
+  font-size: var(--font-small);
+  padding: 1em 0;
+  opacity: .9;
+}
+
+.page_single_section .container .wrapper .form_request .box .shift{
+  font-size: clamp(1.125em, 3vw, 1.25em);
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: var(--fw6);
+  gap: .25em;
+}
+.page_single_section .container .wrapper .form_request .box .shift span{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page_single_section .container .wrapper .form_request .box  .text.root{
+  margin-top: 1em;
+  display: flex;
+  align-items: center;
+  gap: .5em;
+}
+
+.page_single_section .container .wrapper  :where(.request_callback, .get_email, .full_details)  .text{
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: center;
+  align-items: start;
+}
+
+.page_single_section .container .wrapper  :where(.request_callback, .get_email, .full_details)  .text{
+  padding-top: 0 !important;
+}
+
+.page_single_section .container .wrapper  :where(.request_callback, .get_email , .full_details)  .text :where(.input_request_number, .input_request_email, .input_place){
+  all: unset;
+  box-sizing: border-box;
+  border-bottom:  2px solid var(--border-color);
+  padding: 0.75em 1em;
+  width: 100%; 
+  transition: all 0.2s ease-out;
+}
+
+.page_single_section .container .wrapper :where(.request_callback, .get_email , .full_details) .text :where(.input_request_number, .input_request_email, .input_place):focus {
+  border-bottom: 2px solid var(--orange-color);
+}
+
+
+.page_single_section .container .wrapper  :where(.request_callback, .get_email , .full_details)  .text .callback_btn {
+  all: unset;
+  border-radius: 4px;
+  background: var(--secondary-color);
+  padding: 0.75em 2em;
+  padding-left: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  margin-top: 1em;
+  border: 1px solid var(--border-color); 
+  text-transform: uppercase;
+  font-weight: var(--fw6);
+  cursor: pointer;
+  /* color: var(--orange-color); */
+  transition: all 0.3s ease-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.page_single_section .container .wrapper :where(.request_callback, .get_email, .full_details) .text .callback_btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); 
+}
+
+.page_single_section .container .wrapper :where(.request_callback, .get_email, .full_details)  .text .callback_btn:active {
+  transform: translateY(1px); /* Pressed button effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  color: var(--orange-color);
+}
+
+
+.page_single_section .container .wrapper :where(.request_callback, .get_email, .full_details)  .text .callback_btn span{
+  display: flex;
+  align-items: center;
+}
+
+
+.page_single_section .container .wrapper .departureDateLabel{
+  padding: 1em 1em 0 1em;
+  margin-bottom: -1em;
+  opacity: 0.4;
+}
+
+.page_single_section .container .wrapper .form_request .box.booking_contact .booking_text{
+  display: flex;
+  align-items: center;
+  gap: .5em;
+  border-bottom: 1px solid var(--border-color);
+}
+.page_single_section .container .wrapper .form_request .box.booking_contact .booking_text:last-child{
+  border: none;
+}
+
+.page_single_section .container .wrapper .form_request .box.booking_contact .booking_text span{
+  display: flex;
+  align-items: center;
+
+}
+.page_single_section .container .wrapper .form_request .box span b{
+  margin-right: .25em;
+}
+
+
+
+
+
+
+
+/* ================================ */
+/*                                  */
+/*    about us or all page          */
+/*                                  */
+/* ================================ */
+
+
+.context_section{
+  padding: 0 2em;
+}
+
+.context_section .container .context_all{
+  padding: 2em 0;
+}
+
+.context_section .container .context_all .context_title{
+font-size: clamp(1.75em, 3vw, 2.25em);
+font-weight: var(--fw7);
+padding-bottom: .25em;
+}
+
+.context_section .container .context_all .context_title.most_imp_title{
+  padding: 3em 0;
+  font-weight: var(--fw8);
+  font-size: clamp(2em, 6vw, 3em);
+}
+
+
+
+.context_section .container .context_all .context_text{
+  font-size: var(--font-small);
+  font-weight: normal;
+  line-height: 1.4;
+  padding-bottom: 2em;
+}
+
+.context_section .container .context_all .context_text:last-child{
+  padding-bottom: 0;
+}
+
+.context_section .container .context_all .context_text b{
+  font-weight: var(--fw7);
+  margin-right: .25em;
+}
+
+.context_section .container .context_all .context_text li{
+  padding-bottom: .25em;
   line-height: 1.4;
 }
 
-.main .wrapper .topic .title.fit {
-  margin-bottom: 0.25em;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.leaveMessage  .full_details{
+  margin-top: 2em;
 }
 
-.main .wrapper .topic .content .text {
-  font-size: var(--font-small);
-  margin: 0.5em 0;
+
+.leaveMessage  .full_details .text{
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: center;
+  align-items: start;
 }
 
-.main .wrapper .topic .content .select_algo {
-  width: 100%;
-  padding: 0.5em 1em;
-  font: inherit;
+.leaveMessage .full_details  .text{
+  padding-top: 0 !important;
 }
 
-.main .wrapper .topic .content form .button {
-  border: 1px solid rgba(232, 232, 232, 0.3);
-  width: 100%;
-  padding: 0.5em;
-  font: inherit;
-  margin: 1em 0;
+
+.leaveMessage .full_details  .text :where(.input_request_number, .input_request_email, .input_place){
+  all: unset;
+  box-sizing: border-box;
+  border-bottom:  2px solid var(--border-color);
+  padding: 0.75em 1em;
+  width: 100%; 
+  transition: all 0.2s ease-out;
+}
+
+
+.leaveMessage .full_details .text :where(.input_request_number, .input_request_email, .input_place):focus {
+  border-bottom: 2px solid var(--orange-color);
+}
+
+
+.leaveMessage .full_details  .text .callback_btn {
+  all: unset;
   border-radius: 4px;
-  text-transform: capitalize;
-  font-weight: var(--fw5);
-  color: var(--white-color);
-  background: green;
-  transition: all 0.3s ease-out;
-}
-
-.main .wrapper .topic .content form .button:hover {
-  border: 1px solid green;
-  background: rgba(233, 232, 232, 0.1);
-}
-
-.main .wrapper .topic .content form .button:active {
-  background: rgba(202, 22, 200, 0.2);
-}
-
-.main .wrapper .topic .content .select_algo:focus {
-  outline: unset;
-}
-
-.main .wrapper .thoery {
-  width: 100%;
-}
-
-.main .wrapper .thoery .description .title {
-  padding: 1em;
-}
-
-.main .wrapper .thoery .description .paragraph {
-  padding: 1em;
-  font-size: var(--font-small);
-}
-
-.main .wrapper .thoery .complexity .title {
-  padding: 1em;
-}
-
-.main .wrapper .thoery .complex {
-  padding: 1em;
-}
-
-.main .wrapper .thoery .complex table {
-  border: 1px solid rgba(232, 232, 232, 0.3);
-  width: 100%;
-}
-
-.main .wrapper .thoery .complex table td {
-  border: 1px solid rgba(232, 232, 232, 0.3);
-  padding: 0.5em;
-  text-align: center;
-  font-size: var(--font-small);
-}
-
-/* ================================ */
-/*                                  */
-/*      aSearchAlgorithm.html       */
-/*                                  */
-/* ================================ */
-
-.wrap {
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  grid-gap: 1em;
-  padding: 0 1em;
-  height: 100%;
-}
-
-.output_result {
-  min-width: 300px;
-  height: 99%;
-  min-height: 500px;
-  position: sticky;
-  position: -webkit-sticky;
-  top: 82px;
-  padding: 0 1em;
-}
-
-.input_visualizer {
-  padding: 0 1em;
-}
-
-.path {
-  height: 100%;
-  width: 100%;
-  color: var(--white-color);
-  background: rgba(100, 100, 100, 0.15);
-  text-align: center;
-  border: 1px solid rgba(232, 232, 232, 0.2);
-  border-radius: 11px;
-  padding: 1.25em;
-  font-size: var(--font-small);
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
-.main .input_visualizer .lower-section {
-  border-radius: 12px;
-  overflow: hidden;
-  background: #d3d3d3;
-}
-
-#drawing-area {
-  width: 100%;
-  height: 100%;
-  background: transparent;
-}
-
-.node {
-  stroke: white;
-  stroke-width: 1px;
-}
-
-.edge {
-  stroke: red;
-  stroke-width: 1px;
-}
-
-.highlight {
-  stroke: blue;
-  stroke-width: 1px;
-}
-
-.main .wrapper .thoery .control-buttons {
+  background: var(--secondary-color);
+  padding: 0.75em 2em;
+  padding-left: 1.5em;
   display: flex;
   align-items: center;
-  justify-content: end;
-  flex-wrap: wrap;
+  justify-content: center;
   gap: 0.5em;
-}
-
-.main .wrapper .thoery .control-buttons button,
-input {
-  all: unset;
-  padding: 0.5em 1.25em;
-  font-size: var(--font-small);
-  border: 1px solid rgba(232, 232, 232, 0.5);
-  border-radius: 5px;
-  transition: all 0.3s ease-out;
-}
-
-.main .wrapper .thoery .control-buttons button:disabled {
-  opacity: 0.5;
-}
-
-.main .wrapper .thoery .control-buttons button:hover {
-  background-color: rgba(232, 232, 232, 0.3);
+  margin-top: 1em;
+  border: 1px solid var(--border-color); 
+  text-transform: uppercase;
+  font-weight: var(--fw6);
   cursor: pointer;
+  /* color: var(--orange-color); */
+  transition: all 0.3s ease-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
-.main .wrapper .thoery .control-buttons button:active {
-  background: green;
+.leaveMessage  .full_details .text .callback_btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); 
 }
 
-.main .wrapper .thoery .control-buttons button:disabled:active {
-  background: red;
+.leaveMessage .full_details  .text .callback_btn:active {
+  transform: translateY(1px); /* Pressed button effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  color: var(--orange-color);
 }
 
-.main .wrapper .thoery .control-buttons input:focus {
-  border: 1px solid green;
+.leaveMessage  .full_details  .text .callback_btn span{
+  display: flex;
+  align-items: center;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 967px) {
   .navbar_section .navigation .menu {
@@ -1016,10 +1356,18 @@ input {
    .list_navbar_section .container .navigation .nav .nav_list .sub_nav_list {
     background: transparent;
   }
+  .list_navbar_section .container .navigation .nav .nav_list .nav_item.multi::after{
+  display: none;
+}
 }
 
 /* same same but different */
 @media screen and (max-width: 967px) {
+  .list_navbar_section .container .navigation .nav .nav_list .nav_item {
+  padding: 1em;
+  display: block;
+  height: auto;
+}
   .list_navbar_section_for_mobile {
     position: fixed;
     top: 0;

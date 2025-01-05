@@ -102,3 +102,33 @@ document.addEventListener("DOMContentLoaded", () => {
     closeNavbar(); // Hide navbar and overlay when clicking on the overlay
   });
 });
+
+// faq
+
+document.querySelectorAll(".faq-item .question").forEach((question) => {
+  question.addEventListener("click", () => {
+    const parent = question.parentElement;
+    const answer = question.nextElementSibling;
+
+    // Toggle current FAQ item
+    parent.classList.toggle("open");
+
+    // Close other answers
+    document.querySelectorAll(".faq-item").forEach((item) => {
+      if (item !== parent) {
+        item.classList.remove("open");
+        item.querySelector(".answer").style.maxHeight = null;
+      }
+    });
+
+    // Open or close the clicked answer
+    if (parent.classList.contains("open")) {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    } else {
+      answer.style.maxHeight = null;
+    }
+  });
+});
+
+
+
