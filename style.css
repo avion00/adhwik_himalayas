@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
-  --primary-color:  linear-gradient(135deg, #021429, #8a4e23);
-  --secondary-color:linear-gradient(-135deg, #021429, #8a4e23);;
+  --primary-color: linear-gradient(135deg, #021429, #8a4e23);
+  --secondary-color: linear-gradient(-135deg, #021429, #8a4e23);
   --secondary-dark-color: #453c5c;
 
   --white-color: #fff;
@@ -258,20 +258,17 @@ svg {
   transform: all 0.3s ease-out;
 }
 
-
-.list_navbar_section .container .navigation .nav .nav_list .nav_item.multi::after{
-  content: '\25B8';
+.list_navbar_section
+  .container
+  .navigation
+  .nav
+  .nav_list
+  .nav_item.multi::after {
+  content: "\25B8";
   display: inline-block;
   rotate: 90deg;
   cursor: pointer;
 }
-
-
-
-
-
-
-
 
 .list_navbar_section
   .container
@@ -295,7 +292,7 @@ svg {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-in-out;
-  opacity: 0; 
+  opacity: 0;
   pointer-events: none;
 }
 
@@ -476,7 +473,6 @@ svg {
   padding: 0 2em;
 }
 
-
 .offer_section .container .specialOffer {
   padding-top: 4em;
 }
@@ -487,7 +483,7 @@ svg {
 }
 
 .offer_section .container .specialOffer .offer_sub_title {
-  font-size: clamp(0.75em, 2vw, .9em);
+  font-size: clamp(0.75em, 2vw, 0.9em);
   font-weight: var(--fw3);
   line-height: 1.2;
 }
@@ -499,7 +495,7 @@ svg {
   margin: 1.5em 0;
 }
 
-.offer_section .container .wrapper .offer_list.holidays{
+.offer_section .container .wrapper .offer_list.holidays {
   flex-wrap: wrap;
 }
 
@@ -512,7 +508,6 @@ svg {
   overflow: hidden;
   cursor: pointer;
 }
-
 
 :where(
     .offer_section.aceHoneymoonOffers_section,
@@ -692,8 +687,6 @@ svg {
   gap: 2em;
 }
 
-
-
 .footer_section .wrapper > div {
   flex: 1;
   min-width: 220px;
@@ -780,19 +773,17 @@ svg {
   font-size: 0.9em;
 }
 
-
-
 /* ================================ */
 /*                                  */
 /*    page-single body seciton      */
 /*                                  */
 /* ================================ */
 
-.page_single_section{
+.page_single_section {
   padding: 0 2em;
 }
 
-.page_single_section .container .wrapper{
+.page_single_section .container .wrapper {
   /* border: 1px solid red; */
   display: flex;
   gap: 20px;
@@ -802,29 +793,28 @@ svg {
   padding: 1em 0;
 }
 
-.page_single_section .container .wrapper .main_blog{
+.page_single_section .container .wrapper .main_blog {
   flex: 0.65;
   /* border: 1px solid red; */
   height: 100%;
   width: 100%;
 }
-.page_single_section .container .wrapper .main_blog .gallery{
+.page_single_section .container .wrapper .main_blog .gallery {
   width: 100%;
   aspect-ratio: 5/3;
   height: 100%;
   border-radius: 4px;
   overflow: hidden;
-  
 }
 
-.page_single_section .container .wrapper .main_blog .gallery img{
+.page_single_section .container .wrapper .main_blog .gallery img {
   height: 100%;
   width: 100%;
   object-fit: cover;
   position: relative;
   z-index: 5;
 }
-.page_single_section .container .wrapper .main_blog .gallery img::after{
+.page_single_section .container .wrapper .main_blog .gallery img::after {
   content: "";
   position: absolute;
   z-index: 6;
@@ -835,86 +825,139 @@ svg {
   height: 100%;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-.page_single_section .container .wrapper .main_blog .explaination{
+.page_single_section .container .wrapper .main_blog .explaination {
   margin-top: 1em;
   padding: 1.5em;
   background: var(--primary-color);
   border-radius: 4px;
 }
 
-.page_single_section .container .wrapper .main_blog .explaination .explaination_title{
+.page_single_section
+  .container
+  .wrapper
+  .main_blog
+  .explaination
+  .explaination_title {
   font-size: clamp(1.5em, 3vw, 2em);
   font-weight: var(--fw7);
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
 }
 
-.page_single_section .container .wrapper .main_blog .explaination .explaination_text{
+.page_single_section
+  .container
+  .wrapper
+  .main_blog
+  .explaination
+  .explaination_text {
   font-size: var(--font-small);
   font-weight: normal;
   line-height: 1.4;
   padding-bottom: 1em;
 }
 
-.page_single_section .container .wrapper .main_blog .explaination .explaination_Youtube_video {
+.page_single_section
+  .container
+  .wrapper
+  .main_blog
+  .explaination
+  .explaination_Youtube_video {
   width: 100%;
-  aspect-ratio: 16/9; 
-  overflow: hidden; 
+  aspect-ratio: 16/9;
+  overflow: hidden;
   position: relative;
   border-radius: 4px;
 }
 
-.page_single_section .container .wrapper .main_blog .explaination .explaination_Youtube_video iframe {
+.page_single_section
+  .container
+  .wrapper
+  .main_blog
+  .explaination
+  .explaination_Youtube_video
+  iframe {
   width: 100%;
   height: 100%;
-  border: none; 
+  border: none;
 }
 
-
-.page_single_section .container .wrapper .main_blog :where(.itinerary, .offer_includes, .offer_excludes){
+.page_single_section
+  .container
+  .wrapper
+  .main_blog
+  :where(.itinerary, .offer_includes, .offer_excludes) {
   margin-top: 1.5em;
   padding: 1.5em;
   background: var(--primary-color);
   border-radius: 4px;
 }
 
-
-.page_single_section .container .wrapper .main_blog :where(.itinerary .itinerary_title, .offer_includes .offer_includes_title, .offer_excludes .offer_excludes_title){
+.page_single_section
+  .container
+  .wrapper
+  .main_blog
+  :where(
+    .itinerary .itinerary_title,
+    .offer_includes .offer_includes_title,
+    .offer_excludes .offer_excludes_title
+  ) {
   font-size: clamp(1.5em, 3vw, 2em);
   font-weight: var(--fw7);
-  padding-bottom: .25em;
+  padding-bottom: 0.25em;
   border-bottom: 1px solid var(--border-color);
 }
 
-.page_single_section .container .wrapper .main_blog :where(.offer_includes .offer_includes_title, .offer_excludes .offer_excludes_title){
+.page_single_section
+  .container
+  .wrapper
+  .main_blog
+  :where(
+    .offer_includes .offer_includes_title,
+    .offer_excludes .offer_excludes_title
+  ) {
   margin-bottom: 0.5em;
 }
 
-
-.page_single_section .container .wrapper .main_blog .itinerary  :where(.itinerary .itinerary_container, .offerIncludes .offer_includes_container, .offer_excludes .offer_excludes_container){
+.page_single_section
+  .container
+  .wrapper
+  .main_blog
+  .itinerary
+  :where(
+    .itinerary .itinerary_container,
+    .offerIncludes .offer_includes_container,
+    .offer_excludes .offer_excludes_container
+  ) {
   max-width: 800px;
 }
 
-.page_single_section .container .wrapper .main_blog .itinerary .itinerary_container .faq-item {
+.page_single_section
+  .container
+  .wrapper
+  .main_blog
+  .itinerary
+  .itinerary_container
+  .faq-item {
   border-bottom: 1px solid var(--border-color);
   overflow: hidden;
 }
 
- .page_single_section .container .wrapper .main_blog .itinerary .itinerary_container .faq-item:last-child {
+.page_single_section
+  .container
+  .wrapper
+  .main_blog
+  .itinerary
+  .itinerary_container
+  .faq-item:last-child {
   border-bottom: none;
 }
 
-.page_single_section .container .wrapper .main_blog .itinerary .itinerary_container .question {
+.page_single_section
+  .container
+  .wrapper
+  .main_blog
+  .itinerary
+  .itinerary_container
+  .question {
   cursor: pointer;
   padding: 0.75em 1em;
   font-size: 1em;
@@ -923,21 +966,40 @@ svg {
   border-radius: 8px 8px 0 0;
 }
 
-.page_single_section .container .wrapper .main_blog .itinerary .itinerary_container .question::before {
-  content: '\25B8';
+.page_single_section
+  .container
+  .wrapper
+  .main_blog
+  .itinerary
+  .itinerary_container
+  .question::before {
+  content: "\25B8";
   display: inline-block;
-  transform: rotate(0deg); 
+  transform: rotate(0deg);
   transition: transform 0.3s ease;
   margin-right: 1em;
   font-weight: bold;
 }
 
-.page_single_section .container .wrapper .main_blog .itinerary .itinerary_container .faq-item.open .question::before {
-  transform: rotate(90deg); 
+.page_single_section
+  .container
+  .wrapper
+  .main_blog
+  .itinerary
+  .itinerary_container
+  .faq-item.open
+  .question::before {
+  transform: rotate(90deg);
 }
 
-
-.page_single_section .container .wrapper .main_blog .itinerary .itinerary_container .faq-item .answer {
+.page_single_section
+  .container
+  .wrapper
+  .main_blog
+  .itinerary
+  .itinerary_container
+  .faq-item
+  .answer {
   max-height: 0;
   overflow: hidden;
   margin: 0 1.75em;
@@ -948,36 +1010,57 @@ svg {
   box-shadow: inset 0 -1px 4px rgba(0, 0, 0, 0.05);
 }
 
-
-.page_single_section .container .wrapper .main_blog .itinerary .itinerary_container .faq-item.open .answer {
+.page_single_section
+  .container
+  .wrapper
+  .main_blog
+  .itinerary
+  .itinerary_container
+  .faq-item.open
+  .answer {
   margin: 0 1.75em 1em 1.75em;
-  max-height: 100vh; 
+  max-height: 100vh;
 }
 
-.page_single_section .container .wrapper .main_blog .itinerary .itinerary_container .faq-item.open .answer  p:not(:last-child){
+.page_single_section
+  .container
+  .wrapper
+  .main_blog
+  .itinerary
+  .itinerary_container
+  .faq-item.open
+  .answer
+  p:not(:last-child) {
   padding-bottom: 1em;
 }
 
-.page_single_section .container .wrapper .main_blog .itinerary .itinerary_container .faq-item.open .answer  div:not(:last-child){
+.page_single_section
+  .container
+  .wrapper
+  .main_blog
+  .itinerary
+  .itinerary_container
+  .faq-item.open
+  .answer
+  div:not(:last-child) {
   padding-bottom: 1em;
 }
 
-
-.page_single_section .container .wrapper .main_blog :where(.offer_includes .offer_includes_container .offer_includes_item, .offer_excludes .offer_excludes_container .offer_excludes_item){
+.page_single_section
+  .container
+  .wrapper
+  .main_blog
+  :where(
+    .offer_includes .offer_includes_container .offer_includes_item,
+    .offer_excludes .offer_excludes_container .offer_excludes_item
+  ) {
   font-size: var(--font-small);
-  padding: .5em 0;
+  padding: 0.5em 0;
 }
-
-
-
-
-
-
-
 
 /* this is now form request,  that is right side container */
 
-.page_single_section .container .wrapper .form_request{
+.page_single_section .container .wrapper .form_request {
   flex: 0.35;
   position: sticky;
   position: -webkit-sticky;
@@ -985,54 +1068,58 @@ svg {
   left: 0;
 }
 
-.page_single_section .container .wrapper .form_request .box{
+.page_single_section .container .wrapper .form_request .box {
   padding: 1.5em;
   background: var(--primary-color);
   margin-bottom: 1.5em;
   border-radius: 4px;
 }
 
-.page_single_section .container .wrapper .form_request .box:last-child{
+.page_single_section .container .wrapper .form_request .box:last-child {
   margin-bottom: 0;
 }
 
-.page_single_section .container .wrapper .form_request .box .title{
+.page_single_section .container .wrapper .form_request .box .title {
   font-size: clamp(1.25em, 3vw, 1.5em);
   font-weight: var(--fw7);
-  padding-bottom: .25em;
+  padding-bottom: 0.25em;
   border-bottom: 1px solid var(--border-color);
-  margin-bottom: .75em;
+  margin-bottom: 0.75em;
   color: var(--orange-color);
 }
 
-.page_single_section .container .wrapper .form_request .box  .text{
+.page_single_section .container .wrapper .form_request .box .text {
   font-size: var(--font-small);
   padding: 1em 0;
-  opacity: .9;
+  opacity: 0.9;
 }
 
-.page_single_section .container .wrapper .form_request .box .shift{
+.page_single_section .container .wrapper .form_request .box .shift {
   font-size: clamp(1.125em, 3vw, 1.25em);
   display: flex;
   align-items: center;
   text-transform: uppercase;
   font-weight: var(--fw6);
-  gap: .25em;
+  gap: 0.25em;
 }
-.page_single_section .container .wrapper .form_request .box .shift span{
+.page_single_section .container .wrapper .form_request .box .shift span {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.page_single_section .container .wrapper .form_request .box  .text.root{
+.page_single_section .container .wrapper .form_request .box .text.root {
   margin-top: 1em;
   display: flex;
   align-items: center;
-  gap: .5em;
+  gap: 0.5em;
 }
 
-.page_single_section .container .wrapper  :where(.request_callback, .get_email, .full_details)  .text{
+.page_single_section
+  .container
+  .wrapper
+  :where(.request_callback, .get_email, .full_details)
+  .text {
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -1040,25 +1127,43 @@ svg {
   align-items: start;
 }
 
-.page_single_section .container .wrapper  :where(.request_callback, .get_email, .full_details)  .text{
+.page_single_section
+  .container
+  .wrapper
+  :where(.request_callback, .get_email, .full_details)
+  .text {
   padding-top: 0 !important;
 }
 
-.page_single_section .container .wrapper  :where(.request_callback, .get_email , .full_details)  .text :where(.input_request_number, .input_request_email, .input_place){
+.page_single_section
+  .container
+  .wrapper
+  :where(.request_callback, .get_email, .full_details)
+  .text
+  :where(.input_request_number, .input_request_email, .input_place) {
   all: unset;
   box-sizing: border-box;
-  border-bottom:  2px solid var(--border-color);
+  border-bottom: 2px solid var(--border-color);
   padding: 0.75em 1em;
-  width: 100%; 
+  width: 100%;
   transition: all 0.2s ease-out;
 }
 
-.page_single_section .container .wrapper :where(.request_callback, .get_email , .full_details) .text :where(.input_request_number, .input_request_email, .input_place):focus {
+.page_single_section
+  .container
+  .wrapper
+  :where(.request_callback, .get_email, .full_details)
+  .text
+  :where(.input_request_number, .input_request_email, .input_place):focus {
   border-bottom: 2px solid var(--orange-color);
 }
 
-
-.page_single_section .container .wrapper  :where(.request_callback, .get_email , .full_details)  .text .callback_btn {
+.page_single_section
+  .container
+  .wrapper
+  :where(.request_callback, .get_email, .full_details)
+  .text
+  .callback_btn {
   all: unset;
   border-radius: 4px;
   background: var(--secondary-color);
@@ -1069,63 +1174,86 @@ svg {
   justify-content: center;
   gap: 0.5em;
   margin-top: 1em;
-  border: 1px solid var(--border-color); 
+  border: 1px solid var(--border-color);
   text-transform: uppercase;
   font-weight: var(--fw6);
   cursor: pointer;
   /* color: var(--orange-color); */
   transition: all 0.3s ease-out;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.page_single_section .container .wrapper :where(.request_callback, .get_email, .full_details) .text .callback_btn:hover {
+.page_single_section
+  .container
+  .wrapper
+  :where(.request_callback, .get_email, .full_details)
+  .text
+  .callback_btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); 
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
-.page_single_section .container .wrapper :where(.request_callback, .get_email, .full_details)  .text .callback_btn:active {
+.page_single_section
+  .container
+  .wrapper
+  :where(.request_callback, .get_email, .full_details)
+  .text
+  .callback_btn:active {
   transform: translateY(1px); /* Pressed button effect */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: var(--orange-color);
 }
 
-
-.page_single_section .container .wrapper :where(.request_callback, .get_email, .full_details)  .text .callback_btn span{
+.page_single_section
+  .container
+  .wrapper
+  :where(.request_callback, .get_email, .full_details)
+  .text
+  .callback_btn
+  span {
   display: flex;
   align-items: center;
 }
 
-
-.page_single_section .container .wrapper .departureDateLabel{
+.page_single_section .container .wrapper .departureDateLabel {
   padding: 1em 1em 0 1em;
   margin-bottom: -1em;
   opacity: 0.4;
 }
 
-.page_single_section .container .wrapper .form_request .box.booking_contact .booking_text{
+.page_single_section
+  .container
+  .wrapper
+  .form_request
+  .box.booking_contact
+  .booking_text {
   display: flex;
   align-items: center;
-  gap: .5em;
+  gap: 0.5em;
   border-bottom: 1px solid var(--border-color);
 }
-.page_single_section .container .wrapper .form_request .box.booking_contact .booking_text:last-child{
+.page_single_section
+  .container
+  .wrapper
+  .form_request
+  .box.booking_contact
+  .booking_text:last-child {
   border: none;
 }
 
-.page_single_section .container .wrapper .form_request .box.booking_contact .booking_text span{
+.page_single_section
+  .container
+  .wrapper
+  .form_request
+  .box.booking_contact
+  .booking_text
+  span {
   display: flex;
   align-items: center;
-
 }
-.page_single_section .container .wrapper .form_request .box span b{
-  margin-right: .25em;
+.page_single_section .container .wrapper .form_request .box span b {
+  margin-right: 0.25em;
 }
-
-
-
-
-
-
 
 /* ================================ */
 /*                                  */
@@ -1133,80 +1261,52 @@ svg {
 /*                                  */
 /* ================================ */
 
-
-.context_section{
+.context_section {
   padding: 0 2em;
 }
 
-.context_section .container .context_all{
+.context_section .container .context_all {
   padding: 2em 0;
 }
 
-.context_section .container .context_all .context_title{
-font-size: clamp(1.75em, 3vw, 2.25em);
-font-weight: var(--fw7);
-padding-bottom: .25em;
+.context_section .container .context_all .context_title {
+  font-size: clamp(1.75em, 3vw, 2.25em);
+  font-weight: var(--fw7);
+  padding-bottom: 0.25em;
 }
 
-.context_section .container .context_all .context_title.most_imp_title{
+.context_section .container .context_all .context_title.most_imp_title {
   padding: 3em 0;
   font-weight: var(--fw8);
   font-size: clamp(2em, 6vw, 3em);
 }
 
-
-
-.context_section .container .context_all .context_text{
+.context_section .container .context_all .context_text {
   font-size: var(--font-small);
   font-weight: normal;
   line-height: 1.4;
   padding-bottom: 2em;
 }
 
-.context_section .container .context_all .context_text:last-child{
+.context_section .container .context_all .context_text:last-child {
   padding-bottom: 0;
 }
 
-.context_section .container .context_all .context_text b{
+.context_section .container .context_all .context_text b {
   font-weight: var(--fw7);
-  margin-right: .25em;
+  margin-right: 0.25em;
 }
 
-.context_section .container .context_all .context_text li{
-  padding-bottom: .25em;
+.context_section .container .context_all .context_text li {
+  padding-bottom: 0.25em;
   line-height: 1.4;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.leaveMessage  .full_details{
+.leaveMessage .full_details {
   margin-top: 2em;
 }
 
-
-.leaveMessage  .full_details .text{
+.leaveMessage .full_details .text {
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -1214,27 +1314,30 @@ padding-bottom: .25em;
   align-items: start;
 }
 
-.leaveMessage .full_details  .text{
+.leaveMessage .full_details .text {
   padding-top: 0 !important;
 }
 
-
-.leaveMessage .full_details  .text :where(.input_request_number, .input_request_email, .input_place){
+.leaveMessage
+  .full_details
+  .text
+  :where(.input_request_number, .input_request_email, .input_place) {
   all: unset;
   box-sizing: border-box;
-  border-bottom:  2px solid var(--border-color);
+  border-bottom: 2px solid var(--border-color);
   padding: 0.75em 1em;
-  width: 100%; 
+  width: 100%;
   transition: all 0.2s ease-out;
 }
 
-
-.leaveMessage .full_details .text :where(.input_request_number, .input_request_email, .input_place):focus {
+.leaveMessage
+  .full_details
+  .text
+  :where(.input_request_number, .input_request_email, .input_place):focus {
   border-bottom: 2px solid var(--orange-color);
 }
 
-
-.leaveMessage .full_details  .text .callback_btn {
+.leaveMessage .full_details .text .callback_btn {
   all: unset;
   border-radius: 4px;
   background: var(--secondary-color);
@@ -1245,63 +1348,30 @@ padding-bottom: .25em;
   justify-content: center;
   gap: 0.5em;
   margin-top: 1em;
-  border: 1px solid var(--border-color); 
+  border: 1px solid var(--border-color);
   text-transform: uppercase;
   font-weight: var(--fw6);
   cursor: pointer;
   /* color: var(--orange-color); */
   transition: all 0.3s ease-out;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.leaveMessage  .full_details .text .callback_btn:hover {
+.leaveMessage .full_details .text .callback_btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); 
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
-.leaveMessage .full_details  .text .callback_btn:active {
+.leaveMessage .full_details .text .callback_btn:active {
   transform: translateY(1px); /* Pressed button effect */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: var(--orange-color);
 }
 
-.leaveMessage  .full_details  .text .callback_btn span{
+.leaveMessage .full_details .text .callback_btn span {
   display: flex;
   align-items: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media screen and (max-width: 967px) {
   .navbar_section .navigation .menu {
@@ -1353,21 +1423,26 @@ padding-bottom: .25em;
     padding: 0.75em 1.5em;
     padding-left: 3.5em;
   }
-   .list_navbar_section .container .navigation .nav .nav_list .sub_nav_list {
+  .list_navbar_section .container .navigation .nav .nav_list .sub_nav_list {
     background: transparent;
   }
-  .list_navbar_section .container .navigation .nav .nav_list .nav_item.multi::after{
-  display: none;
-}
+  .list_navbar_section
+    .container
+    .navigation
+    .nav
+    .nav_list
+    .nav_item.multi::after {
+    display: none;
+  }
 }
 
 /* same same but different */
 @media screen and (max-width: 967px) {
   .list_navbar_section .container .navigation .nav .nav_list .nav_item {
-  padding: 1em;
-  display: block;
-  height: auto;
-}
+    padding: 1em;
+    display: block;
+    height: auto;
+  }
   .list_navbar_section_for_mobile {
     position: fixed;
     top: 0;
@@ -1445,14 +1520,14 @@ padding-bottom: .25em;
     align-items: center;
   }
   .list_navbar_section
-  .container
-  .navigation
-  .nav
-  .nav_list
-  .sub_nav_list
-  li:hover {
+    .container
+    .navigation
+    .nav
+    .nav_list
+    .sub_nav_list
+    li:hover {
     color: var(--orange-color);
-}
+  }
 }
 
 @media screen and (max-width: 567px) {
@@ -1480,19 +1555,48 @@ padding-bottom: .25em;
     width: 95%;
   }
 
-  .footer_section .logo{
-  width: 30%;
-  aspect-ratio: 3/2;
-  float: right;
+  .footer_section .logo {
+    width: 30%;
+    aspect-ratio: 3/2;
+    float: right;
+  }
+
+  .footer_section ul {
+    padding: 0 1em;
+  }
 }
 
-.footer_section ul {
-  padding: 0 1em;
-}
-}
 
+
+/* further modification for the upate of list item, in the navbar */
 @media screen and (min-width: 967px) {
   .center_email_nav_item {
     display: none;
   }
+  .list_navbar_section .container .nav .nav_list li a {
+    /* display: block; */
+    align-items: center;
+    padding: 0;
+    padding-top: 0.9em;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  .list_navbar_section .container .nav .nav_list li.nav_item {
+    padding: 0 !important;
+    cursor: pointer;
+  }
 }
+
+.list_navbar_section .container .nav .nav_list li a {
+  width: 100%;
+  height: 100%;
+}
+
+.list_navbar_section .container .nav .nav_list li {
+  cursor: pointer;
+}
+
+
+/* further update of list of navbar */
