@@ -117,6 +117,57 @@ h4 {
   align-items: center;
 }
 
+.center{
+  text-align: center;
+}
+
+.displaycenter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.m{
+  margin: 1em;
+}
+
+.ml{
+  margin-left: 1em;
+}
+
+.mr{
+  margin-right: 1em;
+}
+
+.mt{
+  margin-top: 1em;
+}
+
+.mb{
+  margin-bottom: 1em;
+}
+
+.p{
+  margin: 1em;
+}
+
+.pl{
+  padding-left: 1em;
+}
+
+.pr{
+  padding-right: 1em;
+}
+
+.pt{
+  padding-top: 1em;
+}
+
+.pb{
+  padding-bottom: 1em;
+}
+
+
 svg {
   width: 16px;
   cursor: pointer;
@@ -171,6 +222,17 @@ svg {
 
 .navbar_section .navigation .top_nav_list .nav_item a span:first-child {
   margin-right: 1em;
+}
+
+.navbar_section .navigation .top_nav_list.right_email_nav_item a {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.navbar_section .navigation .top_nav_list.right_email_nav_item a span {
+  display: flex;
+  align-items: center;
 }
 
 .navbar_section .navigation .nav_list .nav_item a {
@@ -799,20 +861,16 @@ svg {
   height: 100%;
   width: 100%;
 }
-.page_single_section .container .wrapper .main_blog .gallery {
-  width: 100%;
-  aspect-ratio: 5/3;
-  height: 100%;
-  border-radius: 4px;
-  overflow: hidden;
-}
 
 .page_single_section .container .wrapper .main_blog .gallery img {
   height: 100%;
   width: 100%;
+  aspect-ratio: 5/3;
   object-fit: cover;
   position: relative;
   z-index: 5;
+  overflow: hidden;
+  border-radius: 4px;
 }
 .page_single_section .container .wrapper .main_blog .gallery img::after {
   content: "";
@@ -1302,11 +1360,51 @@ svg {
   line-height: 1.4;
 }
 
-.leaveMessage .full_details {
-  margin-top: 2em;
+
+
+
+/* ================================ */
+/*                                  */
+/*         career page              */
+/*                                  */
+/* ================================ */
+
+.career_context{
+  display: flex;
+  position: relative;
+  gap: 1.5em;
 }
 
-.leaveMessage .full_details .text {
+.career_context .information{
+  flex: 1;
+}
+
+.career_context .apply_form{
+  flex: 0.75;
+}
+
+.career_context .apply_form{
+  width: 100%;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 5em;
+  left: 0;
+  z-index: 1000;
+  height: fit-content;
+}
+
+.career_context  .full_details{
+  padding: 2em;
+  background: var(--secondary-color);
+  border-radius: 8px;
+}
+
+.career_context  .full_details .context_title{
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.career_context .full_details .text {
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -1314,11 +1412,9 @@ svg {
   align-items: start;
 }
 
-.leaveMessage .full_details .text {
-  padding-top: 0 !important;
-}
 
-.leaveMessage
+
+.career_context
   .full_details
   .text
   :where(.input_request_number, .input_request_email, .input_place) {
@@ -1330,14 +1426,14 @@ svg {
   transition: all 0.2s ease-out;
 }
 
-.leaveMessage
+.career_context
   .full_details
   .text
   :where(.input_request_number, .input_request_email, .input_place):focus {
   border-bottom: 2px solid var(--orange-color);
 }
 
-.leaveMessage .full_details .text .callback_btn {
+.career_context .full_details .text .callback_btn {
   all: unset;
   border-radius: 4px;
   background: var(--secondary-color);
@@ -1357,21 +1453,45 @@ svg {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.leaveMessage .full_details .text .callback_btn:hover {
+.career_context .full_details .text .callback_btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
-.leaveMessage .full_details .text .callback_btn:active {
+.career_context .full_details .text .callback_btn:active {
   transform: translateY(1px); /* Pressed button effect */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: var(--orange-color);
 }
 
-.leaveMessage .full_details .text .callback_btn span {
+.career_context .full_details .text .callback_btn span {
   display: flex;
   align-items: center;
 }
+
+
+
+.career_context .full_details .text .input_resume{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.career_context .full_details .text .input_label{
+  opacity: 0.9;
+  padding:  .85em;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.career_context .full_details .text .input_label.obs{
+  padding:  .85em;
+}
+
+
+
+
+
 
 @media screen and (max-width: 967px) {
   .navbar_section .navigation .menu {
@@ -1391,6 +1511,7 @@ svg {
   .navbar_section .navigation .search_box form {
     min-width: 100px;
   }
+
 
   .wrapper,
   .wrap {
@@ -1434,6 +1555,13 @@ svg {
     .nav_item.multi::after {
     display: none;
   }
+  .page_single_section .container .wrapper {
+  display: block;
+}
+.career_context{
+  display: block;
+}
+
 }
 
 /* same same but different */
@@ -1566,8 +1694,6 @@ svg {
   }
 }
 
-
-
 /* further modification for the upate of list item, in the navbar */
 @media screen and (min-width: 967px) {
   .center_email_nav_item {
@@ -1598,5 +1724,57 @@ svg {
   cursor: pointer;
 }
 
-
 /* further update of list of navbar */
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-button-prev {
+  left: 0.5em;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background: var(--secondary-color);
+  padding: 1em;
+}
+
+.swiper-button-prev::after {
+  font-size: var(--font-small);
+  font-weight: var(--fw8);
+  color: var(--white-color);
+}
+
+.swiper-button-next {
+  right: 0.5em;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background: var(--primary-color);
+  padding: 1em;
+}
+
+.swiper-button-next::after {
+  font-size: var(--font-small);
+  font-weight: var(--fw8);
+  color: var(--white-color);
+}
+
+
+
+.swiper-pagination-bullet {
+  background: var(--dark-color);
+  opacity: 1;
+  height: 6px;
+  width: 6px;
+  border-radius: 50%; 
+  transition: transform 0.7s ease, background-color 0.7s ease; 
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: var(--orange-color);
+  width: 8px;
+  height: 8px;
+  transform: scale(1.5);
+}
