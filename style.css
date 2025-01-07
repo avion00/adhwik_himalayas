@@ -1334,7 +1334,7 @@ svg {
 }
 
 .context_section .container .context_all .context_title.most_imp_title {
-  padding: 3em 0;
+  /* padding: 3em 0; */
   font-weight: var(--fw8);
   font-size: clamp(2em, 6vw, 3em);
 }
@@ -1486,6 +1486,89 @@ svg {
 
 .career_context .full_details .text .input_label.obs{
   padding:  .85em;
+}
+
+
+/* ================================ */
+/*                                  */
+/*         leave a message          */
+/*                                  */
+/* ================================ */
+
+
+.leaveMessage  .full_details .context_title{
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.leaveMessage .full_details .text {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: center;
+  align-items: start;
+}
+
+
+
+.leaveMessage
+  .full_details
+  .text
+  :where(.input_request_number, .input_request_email, .input_place) {
+  all: unset;
+  box-sizing: border-box;
+  border-bottom: 2px solid var(--border-color);
+  padding: 0.75em 1em;
+  width: 100%;
+  transition: all 0.2s ease-out;
+}
+
+.leaveMessage
+  .full_details
+  .text
+  :where(.input_request_number, .input_request_email, .input_place):focus {
+  border-bottom: 2px solid var(--orange-color);
+}
+
+.leaveMessage .full_details .text .callback_btn {
+  all: unset;
+  border-radius: 4px;
+  background: var(--secondary-color);
+  padding: 0.75em 2em;
+  padding-left: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  margin-top: 1em;
+  border: 1px solid var(--border-color);
+  text-transform: uppercase;
+  font-weight: var(--fw6);
+  cursor: pointer;
+  /* color: var(--orange-color); */
+  transition: all 0.3s ease-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.leaveMessage .full_details .text .callback_btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.leaveMessage .full_details .text .callback_btn:active {
+  transform: translateY(1px); /* Pressed button effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: var(--orange-color);
+}
+
+.leaveMessage .full_details .text .callback_btn span {
+  display: flex;
+  align-items: center;
+}
+
+.text.no_padding.leavesss{
+  margin: 3em auto;
+  width: 80%;
 }
 
 
