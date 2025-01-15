@@ -5,7 +5,7 @@
   --secondary-color: linear-gradient(-135deg, #021429, #8a4e23);
   --secondary-dark-color: #453c5c;
 
-  --primary-color: linear-gradient(135deg, #E1F5FE, #FFF8E1);
+  --primary-color: linear-gradient(135deg, #e1f5fe, #fff8e1);
   --secondary-color: linear-gradient(-135deg, #e8f5e9, #fff3e0);
 
   /* --secondary-color: linear-gradient(-135deg, #021429, #8a4e23); */
@@ -90,24 +90,6 @@ table {
 
 input::placeholder {
   font: inherit;
-}
-
-
-::-webkit-scrollbar {
-  width: 13px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 2px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--white-color);
 }
 
 h1,
@@ -478,9 +460,9 @@ svg {
   z-index: -1;
 }
 
-.parallex .container .wrapper .parax{
+.parallex .container .wrapper .parax {
   /* border: 1px solid red; */
-  color: #FFF8E1;
+  color: #fff8e1;
 }
 
 .parallex .container .wrapper .top_title {
@@ -1452,7 +1434,6 @@ svg {
   padding: 0.75em 1em;
   width: 100%;
   transition: all 0.2s ease-out;
-
 }
 
 .career_context
@@ -1853,6 +1834,22 @@ svg {
     .sub_nav_list
     li:first-child {
     padding-top: 2em;
+  }
+  ::-webkit-scrollbar {
+    width: 13px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--white-color);
   }
 }
 
