@@ -1859,7 +1859,7 @@ svg {
 }
 
 .list_navbar_section .container .nav .nav_list li {
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 /* further update of list of navbar */
