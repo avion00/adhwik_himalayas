@@ -5,7 +5,14 @@
   --secondary-color: linear-gradient(-135deg, #021429, #8a4e23);
   --secondary-dark-color: #453c5c;
 
+  --primary-color: linear-gradient(135deg, #E1F5FE, #FFF8E1);
+  --secondary-color: linear-gradient(-135deg, #e8f5e9, #fff3e0);
+
+  /* --secondary-color: linear-gradient(-135deg, #021429, #8a4e23); */
+  --secondary-dark-color: #453c5c;
+
   --white-color: #fff;
+
   --light-bg-color: #f2f3f5;
   --light-text-color: #7c899a;
   --border-color: rgb(232, 232, 232, 0.2);
@@ -50,7 +57,7 @@ body {
   font-weight: 400;
   line-height: 1.4;
   background: var(--primary-color);
-  color: var(--white-color);
+  color: var(--dark-color);
   height: 100%;
   width: 100%;
   scroll-behavior: smooth;
@@ -83,6 +90,24 @@ table {
 
 input::placeholder {
   font: inherit;
+}
+
+/* Custom Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 13px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color when hovering */
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-color);
 }
 
 h1,
@@ -190,7 +215,8 @@ svg {
   position: -webkit-sticky;
   top: 0;
   left: 0;
-  backdrop-filter: blur(8px);
+  /* backdrop-filter: blur(8px); */
+  background: var(--primary-color);
   z-index: 1000;
 }
 
@@ -371,6 +397,7 @@ svg {
 .list_navbar_section .container .navigation .nav .nav_list .sub_nav_list li {
   padding: 0.75em 2em;
   transition: all 0.4s ease-out;
+  border: 1px solid var(--light-bg-color);
 }
 
 .list_navbar_section
@@ -381,6 +408,9 @@ svg {
   .sub_nav_list
   li:hover {
   color: var(--orange-color);
+  color: var(--dark-color);
+  background: var(--secondary-color);
+  /* border: 1px solid red; */
 }
 
 .list_navbar_section
@@ -412,7 +442,6 @@ svg {
 .navbar_section .navigation .menu .icon svg {
   height: 100%;
   width: 100%;
-  color: rgba(252, 252, 252);
   overflow: visible;
   transition: all 0.3s ease-in-out;
   opacity: 0.7;
@@ -426,7 +455,7 @@ svg {
 
 .parallex {
   position: relative;
-  height: 60dvh;
+  height: 68dvh;
   background: url(image/parallax.jpg);
   background-size: cover;
   background-position: center;
@@ -449,6 +478,11 @@ svg {
   z-index: -1;
 }
 
+.parallex .container .wrapper .parax{
+  /* border: 1px solid red; */
+  color: #FFF8E1;
+}
+
 .parallex .container .wrapper .top_title {
   font-size: 46px;
   text-align: center;
@@ -458,7 +492,6 @@ svg {
 
 .parallex .container .wrapper .top_sub_title {
   font-size: clamp(0.75em, 2vw, 1em);
-
   text-align: center;
   line-height: 2;
   font-weight: var(--fw3);
@@ -797,7 +830,6 @@ svg {
   gap: 1em;
 }
 .footer_section .social_icons a {
-  color: #fff;
   margin-right: 0.5em;
   font-size: clamp(14px, 1vw, 16px);
   transition: all 0.3s ease;
@@ -1200,7 +1232,9 @@ svg {
   :where(.input_request_number, .input_request_email, .input_place) {
   all: unset;
   box-sizing: border-box;
-  border-bottom: 2px solid var(--border-color);
+  border: 1px solid rgba(132, 132, 132, 0.4);
+  border-bottom: 2px solid rgba(132, 132, 132, 0.4);
+  border-radius: 2px;
   padding: 0.75em 1em;
   width: 100%;
   transition: all 0.2s ease-out;
@@ -1414,10 +1448,11 @@ svg {
   :where(.input_request_number, .input_request_email, .input_place) {
   all: unset;
   box-sizing: border-box;
-  border-bottom: 2px solid var(--border-color);
+  border-bottom: 2px solid rgba(132, 132, 132, 0.4);
   padding: 0.75em 1em;
   width: 100%;
   transition: all 0.2s ease-out;
+
 }
 
 .career_context
@@ -1473,7 +1508,7 @@ svg {
 .career_context .full_details .text .input_label {
   opacity: 0.9;
   padding: 0.85em;
-  border-bottom: 2px solid var(--border-color);
+  border-bottom: 2px solid rgba(132, 132, 132, 0.4);
 }
 
 .career_context .full_details .text .input_label.obs {
@@ -1505,7 +1540,9 @@ svg {
   :where(.input_request_number, .input_request_email, .input_place) {
   all: unset;
   box-sizing: border-box;
-  border-bottom: 2px solid var(--border-color);
+  border: 1px solid rgba(132, 132, 132, 0.4);
+  border-bottom: 2px solid rgba(132, 132, 132, 0.4);
+  border-radius: 2px;
   padding: 0.75em 1em;
   width: 100%;
   transition: all 0.2s ease-out;
@@ -1628,6 +1665,10 @@ svg {
   }
   .career_context .information {
     margin-bottom: 5em;
+  }
+  .aceHoneymoonOffers_section .offer_list {
+    overflow: auto;
+    flex-wrap: wrap;
   }
 }
 
@@ -1780,6 +1821,39 @@ svg {
     padding: 0 !important;
     cursor: pointer;
   }
+  .list_navbar_section .container .navigation .nav .nav_list .sub_nav_list {
+    /* padding: 1em 0; */
+    box-shadow: 2px 2px 10px 5px rgba(122, 122, 122, 0.1);
+  }
+
+  .list_navbar_section
+    .container
+    .navigation
+    .nav
+    .nav_list
+    .sub_nav_list
+    li:hover {
+    border-bottom: 1px solid #b0bec5;
+  }
+  .list_navbar_section
+    .container
+    .navigation
+    .nav
+    .nav_list
+    .sub_nav_list
+    li:last-child {
+    border-bottom: none;
+    padding-bottom: 2em;
+  }
+  .list_navbar_section
+    .container
+    .navigation
+    .nav
+    .nav_list
+    .sub_nav_list
+    li:first-child {
+    padding-top: 2em;
+  }
 }
 
 .list_navbar_section .container .nav .nav_list li a {
@@ -1810,7 +1884,7 @@ svg {
 .swiper-button-prev::after {
   font-size: var(--font-small);
   font-weight: var(--fw8);
-  color: var(--white-color);
+  color: var(--orange-color);
 }
 
 .swiper-button-next {
@@ -1825,7 +1899,7 @@ svg {
 .swiper-button-next::after {
   font-size: var(--font-small);
   font-weight: var(--fw8);
-  color: var(--white-color);
+  color: var(--orange-color);
 }
 
 .swiper-pagination-bullet {
