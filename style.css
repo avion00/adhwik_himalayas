@@ -92,22 +92,22 @@ input::placeholder {
   font: inherit;
 }
 
-/* Custom Scrollbar Styling */
+
 ::-webkit-scrollbar {
   width: 13px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--primary-color);
-  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; /* Color when hovering */
+  background: #555;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--dark-color);
+  background: var(--white-color);
 }
 
 h1,
